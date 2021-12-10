@@ -1,13 +1,11 @@
 .app {
-  width: 80%;
+  width: 84%;
   display: flex;
   align-items: center;
+  flex-direction: column;
   height: 100vh;
   justify-content: center;
-  margin-left: 19em;
-   
-  
- 
+  margin-left: 18em;
    }
 
 
@@ -25,6 +23,10 @@
      border: 7px double black;
      font-size: 20px;
     
+   }
+   h4 {
+     font-size: 30px;
+     margin-bottom: 1em;
    }
 
 

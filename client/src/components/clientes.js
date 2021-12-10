@@ -5,7 +5,9 @@ import style from './clintes.module.css'
 import {FaSearch} from 'react-icons/fa'
 
 
+
 function clientes() {
+  
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [employeeList, setEmployeeList] = useState([])
@@ -22,6 +24,8 @@ function clientes() {
 
 
     const getEmployees = () => {
+      
+    
 
         Axios.get('http://localhost:3006/employees')
         .then((response) => {
@@ -29,6 +33,8 @@ function clientes() {
         })
     
       }
+      
+    
 
       const updateEmployeeEmail = (id) => {
         Axios.put('http://localhost:3006/updateemail', {email: newEmail, id:id})
@@ -37,6 +43,7 @@ function clientes() {
             return val.id == id ? {id: val.id, name: val.name, email: newEmail, telefone: val.telefone} : val
           }))
         })
+        document.location.reload(true)
       }
 
       const updateEmployeeName = (id) => {
@@ -46,7 +53,7 @@ function clientes() {
             return val.id == id ? {id: val.id, name: newName, telefone: val.telefone, email: val.email} : val
           }))
         })
-      
+       document.location.reload(true)
       }
 
       const updateEmployeeTelefone = (id) => {
@@ -56,6 +63,7 @@ function clientes() {
             return val.id == id ? {id: val.id, name: val.name, telefone: newTelefone, email: val.email} : val
           }))
         })
+        document.location.reload(true)
       }
 
 
@@ -69,7 +77,7 @@ function clientes() {
     })
   }
 
-   window.onload = getEmployees
+   
 
 
 
@@ -80,12 +88,9 @@ function clientes() {
 
 
 
-   
-
-
 
     return (
-        <div className={style.container}>
+        <div className={style.container} onMouseOver={getEmployees}>
 
           <div className={style.procurar}>
             <div className={style.procurar_icon}> <FaSearch /> </div>

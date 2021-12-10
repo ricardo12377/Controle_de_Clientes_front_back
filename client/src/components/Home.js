@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import style from './Home.module.css'
 import Axios from 'axios';
-import Clientes from './clientes';
 import {
   BrowserRouter as Router,
   Route,
@@ -31,11 +30,14 @@ function Home() {
         email: email
       }])
     })
+    document.location.reload(true)
   }
 
   
   return (
     <div className={style.app}>
+                     
+                     <h4>Adicionar Cliente</h4>
 
       <div  className={style.form} >
       <label>Nome</label>
