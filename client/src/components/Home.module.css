@@ -1,0 +1,59 @@
+.app {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  margin-left: 19em;
+   
+  
+ 
+   }
+
+
+   .form {
+     display: flex;
+     flex-direction: column;
+     background-color: white;
+     justify-content: center;
+     width: 600px;
+     height: 400px;
+     justify-content: center;
+     align-items: center;
+     border-radius: 15px;
+     background-color: rgb(104, 104, 196);
+     border: 7px double black;
+     font-size: 20px;
+    
+   }
+
+
+   .form label {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-top: 1em;
+   }
+
+   .form input {
+     margin-top: 0.4em;
+     width: 350px;
+     height: 30px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border: 2px solid black;
+   }
+
+   .form button {
+     margin-top: 1.5em;
+     width: 300px;
+     color: black;
+     border: 2px solid black;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin-left: 10em;
+     font-size: 17px;
+   }
+   

@@ -1,0 +1,88 @@
+.container {
+   
+    width: 80%;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    margin-left: 19em;
+    
+}
+
+
+
+.emp_card {
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    border: 1px solid black;
+     width: 1160px;
+    height: 200px;
+    margin-top: 1em;
+    border-radius: 15px;
+    flex-direction: column;
+    font-size: 20px;
+    
+}
+
+
+button {
+    width: 60px;
+    height: 30px;
+    background-color: rgb(104, 104, 196);
+    color: white;
+    margin-right: 10em;
+    
+}
+
+input {
+    width: 350px;
+    height: 30px;
+    
+    font-size: 20px;
+}
+
+
+.infos {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    margin-left: 2em;
+    font-weight: bold;
+    justify-content: space-between;
+}
+
+.infos input {
+    position: absolute;
+    margin-left: 25em;
+}
+
+
+.delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 430px;
+    width: 200px;
+    border-radius: 15px;
+    border: 2px solid black;
+    color: black;
+}
+
+.procurar {
+    margin-top: 1.5em;
+    display: flex;
+    gap: 1em;
+    font-size: bold;
+    align-items: center;
+    display: flex;
+    width: 500px;
+    height: 70px;
+}
+
+.procurar_icon {
+    font-size: 26px;
+}
+
+
+
