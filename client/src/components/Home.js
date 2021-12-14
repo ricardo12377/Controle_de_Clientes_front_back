@@ -11,7 +11,6 @@ import {
 
 function Home() {
 
-   
   const [name, setName] = useState('')
   const [telefone, setTelefone] = useState(0)
   const [email, setEmail] = useState('')
@@ -33,11 +32,10 @@ function Home() {
     document.location.reload(true)
   }
 
-  
   return (
     <div className={style.app}>
                      
-                     <h4>Adicionar Cliente</h4>
+      <h4>Adicionar Cliente</h4>
 
       <div  className={style.form} >
       <label>Nome</label>
@@ -53,11 +51,6 @@ function Home() {
 
       </div>
       
-     
-      
-     
-     
-     
     </div>
   );
 }

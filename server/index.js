@@ -3,11 +3,8 @@ const app = express();
 const mysql = require('mysql')
 const cors = require('cors')
 
-
-
 app.use(cors());
 app.use(express.json());
-
 
 const db = mysql.createConnection({
     user:'root',
@@ -16,15 +13,12 @@ const db = mysql.createConnection({
     database: 'employesystem'
 });
 
-
 app.post('/create', (req, res) => {
     const name = req.body.name;
     const telefone = req.body.telefone;
     const email = req.body.email;
-   
 
-    
-    db.query('INSERT INTO employees (name, telefone, email) VALUES (?,?,?)',
+db.query('INSERT INTO employees (name, telefone, email) VALUES (?,?,?)',
      [name, telefone, email],
       (err, result ) => {
           if (err) {
@@ -32,12 +26,8 @@ app.post('/create', (req, res) => {
           } else {
               res.send('Values Inserted!')
           }
-     }
-     );
-
-
-} );
-
+     });
+});
 
 app.get('/employees', (req, res) => {
     db.query("SELECT * FROM employees", (err, result) => {
@@ -48,7 +38,6 @@ app.get('/employees', (req, res) => {
         }
     })
 })
-
 
 app.put('/updateemail', (req, res) => {
   const id = req.body.id
@@ -62,8 +51,6 @@ app.put('/updateemail', (req, res) => {
   })
 })
 
-
-
 app.put('/updatename', (req,res) => {
     const id = req.body.id
     const name = req.body.name
@@ -75,7 +62,6 @@ app.put('/updatename', (req,res) => {
         }
     })
 })
-
 
 app.put('/updatetelefone', (req, res) => {
     const id= req.body.id
@@ -90,7 +76,6 @@ app.put('/updatetelefone', (req, res) => {
 });
 
 
-
 app.delete('/delete/:id', (req, res) => {
     const id = req.params.id
     db.query("DELETE FROM employees WHERE id = ?", id, (err, result) => {
@@ -101,7 +86,6 @@ app.delete('/delete/:id', (req, res) => {
         }
     })
 })
-
 
 app.listen(3006, () => {
     console.log("Server running on port 3006")

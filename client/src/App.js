@@ -14,25 +14,19 @@ import {
 
 function App() {
 
-   
-
-   
   return (
     <div className="app">
     
     
     <Router>
-      <Navbar />
+       <Navbar />
 
-      <Switch>
-       <Route path='/' exact component={Home} />
+       <Switch>
+        <Route path='/' exact component={Home} />
         <Route path="/clientes" component={Clientes} />
-      </Switch>
+       </Switch>
 
-
-
-    
-      </Router>
+    </Router>
     
      
     </div>

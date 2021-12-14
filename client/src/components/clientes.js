@@ -4,38 +4,23 @@ import Axios from 'axios';
 import style from './clintes.module.css'
 import {FaSearch} from 'react-icons/fa'
 
-
-
-function clientes() {
+function Clientes() {
   
-
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [employeeList, setEmployeeList] = useState([])
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [newName, setNewName] = useState(0)
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [edit, setEdit] = useState(false)
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [newEmail, setNewEmail] = useState([])
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [newTelefone, setNewTelefone] = useState([])
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [procurar, setProcurar] = useState([])
-
 
     const getEmployees = () => {
       
-    
-
         Axios.get('http://localhost:3006/employees')
         .then((response) => {
           setEmployeeList(response.data);
         })
-    
       }
       
-    
-
       const updateEmployeeEmail = (id) => {
         Axios.put('http://localhost:3006/updateemail', {email: newEmail, id:id})
         .then((response) => {
@@ -66,8 +51,6 @@ function clientes() {
         document.location.reload(true)
       }
 
-
-      
   const deleteEmployee = (id) => {
     Axios.delete(`http://localhost:3006/delete/${id}`)
     .then((response) => {
@@ -76,18 +59,6 @@ function clientes() {
       }))
     })
   }
-
-   
-
-
-
-   function showEdit () {
-       setEdit(!edit)
-   }
-
-
-
-
 
     return (
         <div className={style.container} onMouseOver={getEmployees}>
@@ -106,8 +77,6 @@ function clientes() {
           }).map((val, key) => {
               return <div >
                     
-        
-          
            <div className={style.emp_card}>
            <div className={style.infos}>
                Name:
@@ -116,7 +85,6 @@ function clientes() {
                <button onClick={() => {updateEmployeeName(val.id)}}> {""} Update</button>
             </div>
 
-
            <div className={style.infos}>
              Telefone:
               {val.telefone}
@@ -124,34 +92,27 @@ function clientes() {
               <button onClick={() => {updateEmployeeTelefone(val.id)}}> {""} Update</button>
               </div>
            
-
            <div className={style.infos}>
                Email:
                {val.email}
                <input type="text" placeholder='Altere o E-mail'  onChange={(e) => setNewEmail(e.target.value)} />
                <button onClick={() => {updateEmployeeEmail(val.id)}}> {""} Update</button>
-               
                </div>
            
-           
-               <div>
-           <button onClick={() => {deleteEmployee(val.id)}} className={style.delete} >Delete</button>
+           <div>
+               <button onClick={() => {deleteEmployee(val.id)}} className={style.delete} >Delete</button>
            </div>
            
-
            </div>
            
-
-              </div>
+           </div>
           }) : null}
-            
-            
-
+        
         </div>
     );
 }
 
-export default clientes;
+export default Clientes;
 
 
 
